@@ -1,0 +1,43 @@
+.pe-pop {
+  background-color: #000;
+  color: #83b9c7;
+  font-size: 24px;
+  padding: 48px;
+  font-weight: 300;
+  text-align: center;
+  position: fixed;
+  right: -350px;
+  bottom: -350px;
+  transform: rotate(315deg);
+  width: 600px;
+  height: 600px;
+}
+
+.date {
+  display: inline;
+}
+
+.place {
+  font-size: 34px;
+  display: block;
+  font-weight: 700;
+}
+
+@media screen and (max-width: 480px) {
+  .pe-pop {
+    margin: 0;
+    font-size: 18px;
+    padding: 12px;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    transform: rotate(0);
+    text-align: left;
+  }
+
+  .place {
+    font-size: 20px;
+    display: inline;
+  }
+}
