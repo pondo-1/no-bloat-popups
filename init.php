@@ -4,10 +4,29 @@
  * Plugin Name: No bloat Popups 
  * Plugin URI: https://page-effect.de/
  * Description: Test.
- * Version: 0.1
+ * Version: 1.1
  * Author: Page Effect
  * Author URI: https://page-effect.de/
  **/
+
+//////--------------Set Cookie: First Page in Session---------------------// 
+add_action(
+  'init',
+  function () {
+    $date = new DateTime("now", new DateTimeZone('Europe/Berlin'));
+    setcookie('visit_time', $date->format('Y-m-d H:i:s'), 0);
+  }
+);
+
+/// Add Popup to Footer
+
+
+if (!isset($_COOKIE["visit_time"])) {
+
+  add_action('wp_footer', 'pe_popup');
+}
+
+
 
 function pe_popup()
 {
@@ -16,7 +35,7 @@ function pe_popup()
 }
 
 
-add_action('wp_footer', 'pe_popup');
+
 
 /**
  * Proper way to enqueue scripts and styles
