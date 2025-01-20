@@ -11,6 +11,7 @@
   transform: rotate(315deg);
   width: 600px;
   height: 600px;
+  z-index: 9;
 }
 
 .date {
