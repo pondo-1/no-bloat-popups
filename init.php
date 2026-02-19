@@ -42,14 +42,36 @@ function pe_popup() {
   $pop = "<div class='pe-pop'> 
 <div class='container'>
 <button class='close' aria-label='Fenster schließen'>X</button>
-<h2 class='headline-2'>JETZT HÖRTEST MACHEN</br>
-UND E-BIKE GEWINNEN!</h2>
+<div class='headline-2'>
+<div class='linebreak'>
+<span class='highlight'>SCHON GEHÖRT</span>?</div>
+<div class='linebreak'>JETZT HÖRTEST MACHEN</div>
+<div class='linebreak'>UND <span class='highlight'>E-BIKE GEWINNEN!</span></div>
+</div>
 
-<p>Zum Tag der Hörgesundheit in Lohr
-am Samstag, den 11.04.26 (10-15 Uhr) in der
+<p class='text'>Zum <span class='highlight'>Tag der Hörgesundheit in Lohr</span>
+am Samstag, den <span class='highlight'>11.04.26</span> (10-15 Uhr) in der
 Alten Turnhalle Lohr a.Main verlost Hörakustik Döll
-unter allen Teilnehmer:innen ein E-Bike</p>
- </div>   </div>";
+unter allen Teilnehmer:innen ein <span class='highlight'>E-Bike.</span>
+</p>
+
+<div class='how text'>
+<h3>So funktioniert 's:</h3>
+<ol>
+<li>Machen Sie im Vorfeld des Tags der Hörgesundheit einen kostenlosen Hörtest in einer unserer Filialen oder direkt
+am 11.04. einen Live-Hörtest bei uns am Messestand.</li>
+<li>Füllen Sie dabei eine Teilnahmekarte zum Gewinnspiel aus.</li>
+<li>Besuchen Sie uns am Tag der Hörgesundheit (11.04.) in der Alten Turnhalle Lohr a.Main und werfen Sie Ihre Karte
+bis 14 Uhr in die Gewinnspielbox vor Ort.</li>
+</ol>
+</div>
+
+<div class='text yellow'>
+<span class='date'>11.04.26</span><div class='linebreak'>Fachvorträge,</div><div class='linebreak'>Produktvorführungen</div><div class='linebreak'>Live-Hörtests.</div>
+</div>
+</div>
+</div>   
+</div>";
  
 
 echo $pop;

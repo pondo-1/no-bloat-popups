@@ -10,6 +10,9 @@ General Style
 /*********************
 Full Screen Style
 *******************/
+body .pe-pop .container .highlight {
+  color: #83b9c7;
+}
 
 .pe-pop {
   height: 100vh;
@@ -17,7 +20,6 @@ Full Screen Style
   top: 0;
   left: 0;
   background-color: rgba(0, 0, 0, 0.8);
-  color: #83b9c7;
   font-size: 24px;
   padding: 48px;
   font-weight: 300;
@@ -41,6 +43,8 @@ Full Screen Style
   cursor: pointer;
   display: block;
   top: 0;
+  left: 0;
+  right: auto;
   font-size: 80px;
   height: 80px;
   width: 80px;
@@ -52,10 +56,116 @@ Full Screen Style
   height: 80px;
   width: 80px;
   line-height: 80px;
+  font-weight: 900;
 }
 
-.headline-2 {
-  display: block;
+.pe-pop .container .headline-2 {
+  color: #fff;
+  font-size: 26px;
+  font-weight: 900;
+  line-height: 1.2;
+  margin: 0;
+  overflow: visible;
+  text-transform: uppercase;
+  text-align: left;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  align-content: flex-start;
+  padding: 50px 0 0 0;
+}
+
+.headline-2 .linebreak {
+  display: inline-block;
+  background-color: #000;
+  padding: 5px 8px;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+  line-height: 1.2;
+}
+
+@media screen and (min-width: 708px) {
+  .pe-pop .container .headline-2 .linebreak {
+    font-size: 36px;
+    padding: 5px 8px 0 8px;
+
+    line-height: 1.2;
+  }
+}
+
+@media screen and (min-width: 981px) {
+  .pe-pop .container .headline-2 .linebreak {
+    font-size: 50px;
+    padding: 5px 12px 0 12px;
+
+    line-height: 1.2;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .pe-pop .container .headline-2 {
+    font-size: 72px;
+    font-weight: 900;
+    max-width: 1070px;
+  }
+}
+
+.text {
+  text-align: left;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 1.2;
+  padding-left: 0;
+}
+
+body .pe-pop .container .text .highlight {
+  font-weight: 900;
+  color: #000;
+}
+
+.how.text {
+  background-color: #f5f5f5;
+  padding: 25px;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.how.text h3 {
+  font-size: 22px;
+  font-weight: 900;
+  color: #83b9c7;
+}
+
+.how.text li {
+  list-style-type: decimal;
+  padding: 5px 20px;
+  list-style-position: inside;
+  text-indent: -24px;
+  max-width: 700px;
+}
+
+.yellow {
+  background-color: hsl(57, 86%, 63%);
+  border-radius: 50%;
+  padding: 40px;
+  position: absolute;
+  rotate: -20deg;
+  width: 210px;
+  height: 210px;
+  right: -40px;
+  top: -50px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-weight: 900;
+  font-size: 22px;
+}
+
+.yellow .date {
+  font-size: 1.2em;
   font-weight: 900;
 }
 
