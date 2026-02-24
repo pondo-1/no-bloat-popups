@@ -4,29 +4,16 @@
  * Plugin Name: No bloat Popups 
  * Plugin URI: https://page-effect.de/
  * Description: Test.
- * Version: 1.1
+ * Version: 1.96
  * Author: Page Effect
  * Author URI: https://page-effect.de/
  **/
 
-//////--------------Set Cookie: First Page in Session---------------------// 
-add_action(
-  'init',
-  function () {
-    $date = new DateTime("now", new DateTimeZone('Europe/Berlin'));
-    setcookie('visit_time', $date->format('Y-m-d H:i:s'), 0);
-  }
-);
-
-/// Add Popup to Footer
+// Cookie-Logik läuft im Browser per JS - unabhängig vom Server-Cache
+add_action('wp_footer', 'pe_popup');
+add_action('wp_enqueue_scripts', 'pe_enqueue');
 
 
-// if (!isset($_COOKIE["visit_time"])) {
-  //testing
-  if(1==1) {
-
-  add_action('wp_footer', 'pe_popup');
-}
 
 
 // Störer
@@ -39,6 +26,8 @@ add_action(
 
 // Gewinnspiel
 function pe_popup() {
+
+
   $pop = "<div class='pe-pop'> 
 <div class='container'>
 <button class='close' aria-label='Fenster schließen'>X</button>
@@ -56,6 +45,12 @@ unter allen Teilnehmer:innen ein <span class='highlight'>E-Bike.</span>
 </p>
 
 <div class='how text'>
+<div class='text yellow'>
+<span class='date'>11.04.26</span><div class='linebreak'>Fachvorträge,</div><div class='linebreak'>Produktvorführungen</div>
+<div class='linebreak'>Live-Hörtests.</div>
+</div>
+
+<!---
 <h3>So funktioniert 's:</h3>
 <ol>
 <li>Machen Sie im Vorfeld des Tags der Hörgesundheit einen kostenlosen Hörtest in einer unserer Filialen oder direkt
@@ -65,11 +60,11 @@ am 11.04. einen Live-Hörtest bei uns am Messestand.</li>
 bis 14 Uhr in die Gewinnspielbox vor Ort.</li>
 </ol>
 </div>
+-->
 
-<div class='text yellow'>
-<span class='date'>11.04.26</span><div class='linebreak'>Fachvorträge,</div><div class='linebreak'>Produktvorführungen</div><div class='linebreak'>Live-Hörtests.</div>
 </div>
-</div>
+<a class='button btn' href='/gewinnspiel'>Mehr erfahren</a>
+
 </div>   
 </div>";
  
@@ -86,10 +81,10 @@ echo $pop;
 
 function pe_enqueue()
 {
-  wp_register_style('pop_style', plugin_dir_url(__FILE__) . 'pop-style.css', true, '1.0.1');
+  wp_register_style('pop_style', plugin_dir_url(__FILE__) . 'pop-style.css', true, '1.0.9');
   wp_enqueue_style('pop_style');
-  wp_register_script('pop', plugin_dir_url(__FILE__) . 'pop.js', array('jquery'), true, '1.0.1');
+  wp_register_script('pop', plugin_dir_url(__FILE__) . 'pop.js', array('jquery'), true, '1.0.9');
   wp_enqueue_script('pop');
 }
 
-add_action('wp_enqueue_scripts', 'pe_enqueue');
+

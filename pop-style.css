@@ -15,18 +15,18 @@ body .pe-pop .container .highlight {
 }
 
 .pe-pop {
-  height: 100vh;
   width: 100vw;
+  height: 100vh;
   top: 0;
   left: 0;
   background-color: rgba(0, 0, 0, 0.8);
-  font-size: 24px;
-  padding: 48px;
   font-weight: 300;
   text-align: center;
-  display: flex;
+  display: none; /* Standardmäßig versteckt - JS zeigt es an */
   justify-content: center;
   align-items: center;
+  /* overflow: hidden; */
+  padding: 20px 0;
 }
 
 .container {
@@ -36,7 +36,11 @@ body .pe-pop .container .highlight {
   position: relative;
   display: flex;
   flex-direction: column;
-  padding: 2em;
+  /* overflow-y: auto; */
+  /* height: 100vh; */
+  padding-top: 40px;
+  padding-bottom: 100px;
+  font-size: 18px;
 }
 
 .container .close {
@@ -85,38 +89,9 @@ body .pe-pop .container .highlight {
   line-height: 1.2;
 }
 
-@media screen and (min-width: 708px) {
-  .pe-pop .container .headline-2 .linebreak {
-    font-size: 36px;
-    padding: 5px 8px 0 8px;
-
-    line-height: 1.2;
-  }
-}
-
-@media screen and (min-width: 981px) {
-  .pe-pop .container .headline-2 .linebreak {
-    font-size: 50px;
-    padding: 5px 12px 0 12px;
-
-    line-height: 1.2;
-  }
-}
-
-@media screen and (min-width: 1440px) {
-  .pe-pop .container .headline-2 {
-    font-size: 72px;
-    font-weight: 900;
-    max-width: 1070px;
-  }
-}
-
 .text {
   text-align: left;
-  font-weight: 500;
-  font-size: 24px;
   line-height: 1.2;
-  padding-left: 0;
 }
 
 body .pe-pop .container .text .highlight {
@@ -125,10 +100,32 @@ body .pe-pop .container .text .highlight {
 }
 
 .how.text {
-  background-color: #f5f5f5;
-  padding: 25px;
+  /* background-color: #f5f5f5; */
+  /* padding: 25px; */
+
   font-size: 18px;
   font-weight: 400;
+}
+
+.btn {
+  border-radius: 0;
+  font-size: 1em;
+  line-height: 1.618;
+  cursor: pointer;
+  padding: 0.6180469716em 1.41575em;
+  text-decoration: none;
+  font-weight: 600;
+  text-shadow: none;
+  display: inline-block;
+  -webkit-appearance: none;
+  color: #000;
+  border: 2px solid #7a7a7a;
+  width: max-content;
+  margin-top: 15px;
+}
+
+.btn:hover {
+  opacity: 0.5;
 }
 
 .how.text h3 {
@@ -147,14 +144,8 @@ body .pe-pop .container .text .highlight {
 
 .yellow {
   background-color: hsl(57, 86%, 63%);
-  border-radius: 50%;
   padding: 40px;
-  position: absolute;
-  rotate: -20deg;
-  width: 210px;
-  height: 210px;
-  right: -40px;
-  top: -50px;
+
   text-align: center;
   display: flex;
   justify-content: center;
@@ -167,6 +158,72 @@ body .pe-pop .container .text .highlight {
 .yellow .date {
   font-size: 1.2em;
   font-weight: 900;
+}
+
+@media screen and (min-width: 708px) {
+  .pe-pop {
+    font-size: 24px;
+    padding: 48px;
+  }
+
+  .container {
+    padding: 2em;
+  }
+  .pe-pop .container .headline-2 .linebreak {
+    font-size: 36px;
+    padding: 5px 8px 0 8px;
+
+    line-height: 1.2;
+  }
+  .text {
+    padding-left: 10px;
+    font-weight: 500;
+    font-size: 24px;
+  }
+}
+
+@media screen and (min-width: 981px) {
+  .pe-pop {
+    height: 100vh;
+  }
+  .pe-pop .container .headline-2 .linebreak {
+    font-size: 50px;
+    padding: 5px 12px 0 12px;
+
+    line-height: 1.2;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .pe-pop .container .headline-2 {
+    font-size: 72px;
+    font-weight: 900;
+    max-width: 1070px;
+  }
+
+  .yellow {
+    border-radius: 50%;
+    padding: 40px;
+    position: absolute;
+    rotate: -20deg;
+    width: 210px;
+    height: 210px;
+    right: -40px;
+    top: -50px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-weight: 900;
+    font-size: 22px;
+  }
+}
+
+@media screen and (max-height: 600px) {
+  .yellow {
+    display: none;
+  }
 }
 
 /********************
